@@ -10,93 +10,79 @@
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![iTunes API](https://img.shields.io/badge/iTunes_API-blue?style=for-the-badge&logo=apple&logoColor=white)
 
-**openFM** ist eine moderne Webanwendung, die es Benutzern ermöglicht, Radiosender über die [laut.fm API](https://laut.fm/) zu streamen. Die Anwendung zeigt aktuelle Titelinformationen, Senderdetails und eine Historie der zuletzt gespielten Titel an. Das Design ist responsiv und nutzt moderne Webtechnologien für eine optimale Benutzererfahrung.
+**openFM** is a modern web application that allows users to stream radio stations via the [laut.fm API](https://laut.fm/). The application displays current track information, station details, and a history of recently played tracks. The design is responsive and utilizes modern web technologies for an optimal user experience.
 
 ---
 
-## Funktionen
+## Features
 
-- **Live-Streaming** von Radiosendern über die laut.fm API
-- **Anzeige aktueller Titelinformationen** (Künstler, Titel, Albumcover)
-- **Senderdetails** (Name, Slogan, Beschreibung, Standort, Social-Media-Links)
-- **Sendeplan** (aktuelle und nächste Sendung)
-- **Historie der zuletzt gespielten Titel**
-- **Responsives Design** für alle Geräte
-- **Dynamische Hintergrundbilder** basierend auf dem aktuellen Albumcover
+- **Live streaming** of radio stations via the laut.fm API
+- **Display of current track information** (artist, title, album cover)
+- **Station details** (name, slogan, description, location, social media links)
+- **Broadcast schedule** (current and next show)
+- **History of recently played tracks**
+- **Responsive design** for all devices
+- **Dynamic background images** based on the current album cover
 
 ---
 
-## Technologien
+## Technologies
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Framework**: Bootstrap 5
 - **APIs**: [laut.fm API](https://laut.fm/), [iTunes API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/)
-- **Design**: Modernes, anpassbares UI mit dynamischen Farben
+- **Design**: Modern, customizable UI with dynamic colors
 
 ---
 
 ## Installation
 
-### Voraussetzungen
+### Prerequisites
 
-- Ein moderner Webbrowser (Chrome, Firefox, Edge, Safari)
-- Internetverbindung (für API-Abfragen und Streaming)
+- A modern web browser (Chrome, Firefox, Edge, Safari)
+- Internet connection (for API requests and streaming)
 
-### Schritte
-
-1. **Repository klonen**:
+### Steps
+**Clone the repository**:
   ```bash
-   git clone https://github.com/IhrBenutzername/openFM.git
+    git clone https://github.com/ykilian/openFM.git
+    cd openFM
   ```
-2. **Projektverzeichnis öffnen**:
-  ```bash
-   cd openFM
-  ```
-3. **Lokale Entwicklungsumgebung starten**:
-- Öffnen Sie die Datei `index.html` in Ihrem bevorzugten Webbrowser.
+Then open the index.html file in your preferred web browser.
 
 ---
 
-## Konfiguration
-
-### Senderauswahl
-
-- Ändern Sie die Variable `STATION` im `<script>`-Tag der `index.html`, um einen anderen Sender zu streamen:
-  ```javascript
-  const STATION = 'mangoradio'; // Ersetzen Sie 'mangoradio' mit dem gewünschten Sendernamen
-  ```
-
-### Benutzerdefinierte Anpassungen
-
-- **Favicon**: Ersetzen Sie `assets/img/favicon.png` mit Ihrem eigenen Favicon.
-- **Logo**: Ersetzen Sie `assets/img/logo.svg` mit Ihrem eigenen Logo.
-- **Stile**: Passen Sie die Datei `assets/css/styles.css` an, um das Design nach Ihren Wünschen zu ändern.
+## Configuration
+### Station selection
+Change the `STATION` variable in the <script> tag of index.html to stream a different station:
+```
+const STATION = 'mangoradio'; // Replace 'mangoradio' with the desired station name
+```
 
 ---
 
-## Nutzung
+## Usage
 
-1. Öffnen Sie die Anwendung in Ihrem Webbrowser.
-2. Klicken Sie auf den **Play-Button**, um den Stream zu starten.
-3. Die Anwendung zeigt automatisch die aktuellen Titelinformationen, das Albumcover und die Senderdetails an.
-4. Nutzen Sie die Links unter dem Senderlogo, um den Sender auf anderen Plattformen zu besuchen.
+1. Open the application in your web browser.
+2. Click the Play button to start the stream.
+3. The application will automatically display the current track information, album cover, and station details.
+4. Use the links below the station logo to visit the station on other platforms.
 
 ---
 
-## API-Referenz
+## API Reference
 
 ### laut.fm API
 
-- **Senderinformationen**: `https://api.laut.fm/station/{STATION}`
-- **Aktueller Titel**: `https://api.laut.fm/station/{STATION}/current_song`
-- **Historie**: `https://api.laut.fm/station/{STATION}/last_songs`
+* **Station Information**: https://api.laut.fm/station/{STATION}
+* **Current Track**: https://api.laut.fm/station/{STATION}/current_song
+* **History**: https://api.laut.fm/station/{STATION}/last_songs
 
 ### iTunes API
-
-- **Albumcover**: `https://itunes.apple.com/search?term={ARTIST}+{TITLE}&entity=musicTrack&limit=1`
+* **Album Cover**: https://itunes.apple.com/search?term={ARTIST}+{TITLE}&entity=musicTrack&limit=1
 
 ---
 
-## Lizenz
+## LICENSE
 
-Dieses Projekt steht unter der **MIT-Lizenz**.
+This project is licensed under the MIT License.
