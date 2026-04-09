@@ -33,7 +33,14 @@ async function updateData() {
         const station = await stationRes.json();
         const current = await currentSongRes.json();
         const history = await historyRes.json();
-        const playlist = await playlistRes.json();
+        let playlist = null;
+        if (playlistRes.ok) {
+            try {
+                playlist = await playlistRes.json();
+            } catch (e) {
+                playlist = null;
+            }
+        }
 
         stationLogo = station.images.station_640x640 || station.images.station_120x120;
         color = station.color || '#169da8'
@@ -172,7 +179,7 @@ async function updateData() {
             return timetableHTML;
         }
 
-        if (SHOW_TIMETABLE){
+        if (SHOW_TIMETABLE && playlist){
             document.getElementById('timetable').innerHTML = generateTimetable(playlist);
         }
 
