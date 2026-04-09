@@ -194,6 +194,7 @@ footer img {
 }
 
 .timetable-wrapper {
+    display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0 20px;
@@ -201,10 +202,31 @@ footer img {
     scrollbar-color: var(--accent) rgba(255, 255, 255, 0.05);
 }
 
-
 #timetable {
-    display: inline-flex !important;
-    min-width: 100%;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+.day-card {
+    flex: 0 0 300px;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.timetable-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+.timetable-wrapper::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
 }
 
 .day-card {
