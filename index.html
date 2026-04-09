@@ -43,10 +43,12 @@
             <div class="white-card py-3 px-4">
                 <div class="small fw-bold text-muted">Seit: <span id="show-time-now">--</span> Uhr</div>
                 <h3 class="fw-black m-0"><span id="show-name-now">Programm</span></h3>
+                <div class="small fw-bold text-muted"><span id="show-description-now"> </span></div>
             </div>
             <div class="white-card py-3 px-4 mt-3">
                 <div class="small fw-bold text-muted">Ab: <span id="show-time-next">--</span> Uhr</div>
                 <h3 class="fw-black m-0"><span id="show-name-next">Demnächst</span></h3>
+                <div class="small fw-bold text-muted"><span id="show-description-next"> </span></div>
             </div>
         </div>
     </div>
@@ -160,10 +162,12 @@
             document.getElementById('artist').textContent = current.artist.name;
             if (station.current_playlist) {
                 document.getElementById('show-name-now').textContent = station.current_playlist.name;
+                document.getElementById('show-description-now').textContent = station.current_playlist.description;
                 document.getElementById('show-time-now').textContent = station.current_playlist.hour;
             }
             if (station.next_playlist) {
                 document.getElementById('show-name-next').textContent = station.next_playlist.name;
+                document.getElementById('show-description-next').textContent = station.next_playlist.description;
                 document.getElementById('show-time-next').textContent = station.next_playlist.hour;
             }
             cover = await fetchCover(current.artist.name, current.title);
