@@ -54,9 +54,38 @@ Then open the index.html file in your preferred web browser.
 
 ## Configuration
 ### Station selection
-Change the `STATION` variable in the <script> tag of index.html to stream a different station:
+Change the `STATION` variable in assets/js/main.js to stream a different station:
 ```
 const STATION = 'mangoradio'; // Replace 'mangoradio' with the desired station name
+```
+
+### Broadcast schedule
+The broadcast schedule will show your station logo by default. If you want to have custom images,
+find out the id of your playlist under https://api.laut.fm/station/YOUR_STATION_NAME/playlists (replace YOUR_STATION_NAME with your station name) and place your image in 
+the folder openFM/assets/img, named as the id you just found out.
+
+E.g. The playlist has the id 12345, you name your file 12345.webp
+
+You can use these file formats: `webp`, `png`, `jpg`, `jpeg`, `svg`
+
+The days are getting displayed in german. If you want to change that to any other language, change the `dayMap` variable in assets/js/main.js
+```
+const dayMap = {
+    mon: 'Montag',
+    tue: 'Dienstag',
+    wed: 'Mittwoch',
+    thu: 'Donnerstag',
+    fri: 'Freitag',
+    sat: 'Samstag',
+    sun: 'Sonntag'
+};
+```
+
+### Hide broadcast schedule
+
+By default, your page will show your broadcast schedule. If you want to disable that feature, just change the `SHOW_TIMETABLE` variable in assets/js/main.js
+```
+const SHOW_TIMETABLE = true; // Replace true with false
 ```
 
 ---
@@ -77,6 +106,7 @@ const STATION = 'mangoradio'; // Replace 'mangoradio' with the desired station n
 * **Station Information**: https://api.laut.fm/station/{STATION}
 * **Current Track**: https://api.laut.fm/station/{STATION}/current_song
 * **History**: https://api.laut.fm/station/{STATION}/last_songs
+* **Playlist**: https://api.laut.fm/station/{STATION}/playlists
 
 ### iTunes API
 * **Album Cover**: https://itunes.apple.com/search?term={ARTIST}+{TITLE}&entity=musicTrack&limit=1
