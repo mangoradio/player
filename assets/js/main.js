@@ -160,20 +160,22 @@ async function updateData() {
 
                 shows.sort((a, b) => a.start - b.start);
 
-                const showBlocks = shows.map(show =>
-                    `<div class="show-block" data-playlist-id="${show.id}">
-                <div class="playlist-cover"></div>
-                <span class="show-time">${show.start}:00–${show.end}:00</span>
-                <span class="show-name">${show.name}</span>
-            </div>`
-                ).join('');
+                const showBlocks = shows.map(show => `
+    <div class="show-block" data-playlist-id="${show.id}">
+        <div class="playlist-cover"></div>
+        <div class="show-info">
+            <span class="show-time">${show.start}:00 – ${show.end}:00 Uhr</span>
+            <span class="show-name">${show.name}</span>
+        </div>
+    </div>
+`).join('');
 
                 timetableHTML += `
-            <div class="day-card">
-                <div class="day-header">${dayName}</div>
-                ${showBlocks}
-            </div>
-        `;
+    <div class="day-card">
+        <div class="day-header">${dayName}</div>
+        <div class="shows-list">${showBlocks}</div>
+    </div>
+`;
             });
 
             return timetableHTML;
