@@ -14,6 +14,7 @@ const dayMap = {
 async function fetchCover(artist, title) {
     if (!artist || artist.includes("Lade") || artist.includes("Werbepause")) return stationLogo;
     try {
+        artist = artist.split(',')[0]
         const res = await fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(artist + ' ' + title)}&entity=musicTrack&limit=1`);
         const data = await res.json();
         return data.results?.[0]?.artworkUrl100.replace('100x100bb', '600x600bb') || stationLogo;
